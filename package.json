@@ -1,6 +1,6 @@
 {
   "name": "mergeby",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Merge object arrays based on a key or callback function",
   "main": "dist/index.js",
   "scripts": {
@@ -11,8 +11,8 @@
   "author": "Warren Day",
   "license": "MIT",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/warrenday/mergeby"
+    "type": "git",
+    "url": "https://github.com/warrenday/mergeby"
   },
   "keywords": [
     "immutable",
