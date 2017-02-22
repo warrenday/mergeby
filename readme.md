@@ -2,6 +2,7 @@ mergeby
 ===
 
 [![Coverage Status](https://coveralls.io/repos/github/warrenday/mergeby/badge.svg?branch=master)](https://coveralls.io/github/warrenday/mergeby?branch=master)
+[![Build Status](https://travis-ci.org/warrenday/mergeby.svg?branch=master)](https://travis-ci.org/warrenday/mergeby)
 
 > A utility function to immutably merge two object arrays based on a matching key or a callback returning true
 
