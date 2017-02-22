@@ -123,7 +123,7 @@ describe('mergeBy with callback', function() {
             age: 28
         }];
 
-        expect(mergeBy(arr1, arr2, (item1, item2) => {
+        expect(mergeBy(arr1, arr2, function(item1, item2) {
             return item1.name === item2.name
         })).to.deep.equal(expectedResult)
     })
@@ -156,7 +156,7 @@ describe('mergeBy with callback', function() {
             model: '911'
         }]
 
-        expect(mergeBy(arr1, arr2, (item1, item2) => {
+        expect(mergeBy(arr1, arr2, function(item1, item2) {
             return item1.make === item2.make
         })).to.deep.equal(expectedResult)
     })
