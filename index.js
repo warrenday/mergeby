@@ -67,8 +67,10 @@ const mergeBy = (items, newItems, keyOrCallback, mergeDeep = false) => {
         };
     });
 
-    // Add unmerged items to the front of the array
-    return newItems.filter((e, i) => matchedIndexes.indexOf(i) === -1).concat(combined);
+    // Add unmerged items to the end of the array
+    return combined.concat(
+        newItems.filter((e, i) => matchedIndexes.indexOf(i) === -1)
+    )
 };
 
 export default mergeBy;

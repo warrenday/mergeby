@@ -33,7 +33,7 @@ mergeBy(array1, array2, 'name')
 Examples
 -----------------
 
-The properties of the second array are merged into the first, any items from the second array which do not match will be prepended to the resulting array
+The properties of the second array are merged into the first, any items from the second array which do not match will be appended to the resulting array
 
 ```js
 const arr1 = [{

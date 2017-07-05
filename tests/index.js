@@ -48,7 +48,7 @@ describe('mergeBy with key comparison', function() {
         expect(mergeBy(arr1, arr2, 'name')).to.deep.equal(expectedResult)
     })
 
-    it('should prepend any new items to the array', function() {
+    it('should append any new items to the array', function() {
         const arr1 = [{
             make: 'ford',
             model: 'mustang'
@@ -66,14 +66,14 @@ describe('mergeBy with key comparison', function() {
         }]
 
         const expectedResult = [{
-            make: 'ferrari',
-            model: 'z9'
-        }, {
             make: 'ford',
             model: 'focus'
         }, {
             make: 'porche',
             model: '911'
+        }, {
+            make: 'ferrari',
+            model: 'z9'
         }]
 
         expect(mergeBy(arr1, arr2, 'make')).to.deep.equal(expectedResult)
@@ -128,7 +128,7 @@ describe('mergeBy with callback', function() {
         })).to.deep.equal(expectedResult)
     })
 
-    it('should prepend any new items to the array', function() {
+    it('should append any new items to the array', function() {
         const arr1 = [{
             make: 'ford',
             model: 'mustang'
@@ -146,14 +146,14 @@ describe('mergeBy with callback', function() {
         }]
 
         const expectedResult = [{
-            make: 'ferrari',
-            model: 'z9'
-        }, {
             make: 'ford',
             model: 'focus'
         }, {
             make: 'porche',
             model: '911'
+        }, {
+            make: 'ferrari',
+            model: 'z9'
         }]
 
         expect(mergeBy(arr1, arr2, function(item1, item2) {

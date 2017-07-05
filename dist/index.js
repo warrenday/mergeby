@@ -73,10 +73,10 @@ var mergeBy = function mergeBy(items, newItems, keyOrCallback) {
         return _extends({}, item, newItems[matchedIndex]);
     });
 
-    // Add unmerged items to the front of the array
-    return newItems.filter(function (e, i) {
+    // Add unmerged items to the end of the array
+    return combined.concat(newItems.filter(function (e, i) {
         return matchedIndexes.indexOf(i) === -1;
-    }).concat(combined);
+    }));
 };
 
 exports.default = mergeBy;
