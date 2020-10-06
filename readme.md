@@ -9,6 +9,8 @@
 ## Usage
 
 ```js
+import mergeby from 'mergeby';
+
 mergeby(array1, array2, 'name');
 ```
 
