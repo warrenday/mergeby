@@ -1,67 +1,67 @@
-mergeby
-===
-
-[![Coverage Status](https://coveralls.io/repos/github/warrenday/mergeby/badge.svg?branch=master)](https://coveralls.io/github/warrenday/mergeby?branch=master)
-[![Build Status](https://travis-ci.org/warrenday/mergeby.svg?branch=master)](https://travis-ci.org/warrenday/mergeby)
+# mergeby
 
 > A utility function to immutably merge two object arrays based on a matching key or a callback returning true
 
-Installation
------------------
+## Installation
 
     npm install mergeby
 
-Usage
------------------
+## Usage
 
 ```js
-mergeBy(array1, array2, 'name')
+mergeby(array1, array2, 'name');
 ```
 
 **Arguments**
 
-* array1 (Array) the array to merge into
-* array2 (Array|Object) the array to read from
-* keyOrCallback (String|Function) key to check against or function to return true
-* [mergeDeep=false] (Boolean) Should merge nested objects
+- array1 (Array) the array to merge into
+- array2 (Array|Object) the object or array to merge onto array1
+- keyOrCallback (String|Function) key to check against or function to return true
+- [mergeDeep=false](Boolean) should merge nested objects
 
 **Returns**
 
-* (Array) single array containing merged objects
+- (Array) single array containing all merged objects
 
+## Examples
 
-Examples
------------------
-
-The properties of the second array are merged into the first, any items from the second array which do not match will be appended to the resulting array
+The properties of the second array are merged into the first, any items from the second array which do not match will be appended to the final array
 
 ```js
-const arr1 = [{
+const arr1 = [
+  {
     name: 'john',
     age: 18,
-    petsName: 'bruno'
-}, {
+    petsName: 'bruno',
+  },
+  {
     name: 'sam',
-    age: 24
-}, {
+    age: 24,
+  },
+  {
     name: 'daisy',
-    age: 28
-}];
+    age: 28,
+  },
+];
 
-const arr2 = [{
+const arr2 = [
+  {
     name: 'john',
     age: 20,
-    favouriteColour: 'red'
-}, {
+    favouriteColour: 'red',
+  },
+  {
     name: 'sam',
     age: 26,
-    favouriteColour: 'blue'
-}, {
+    favouriteColour: 'blue',
+  },
+  {
     name: 'daisy',
-    age: 28
-}];
+    age: 28,
+  },
+];
 
-const result = mergeBy(arr1, arr2, 'name')
+const result = mergeby(arr1, arr2, 'name');
 
 /* Result
 [{
@@ -78,37 +78,42 @@ const result = mergeBy(arr1, arr2, 'name')
     age: 28
 }];
 */
-
 ```
 
-Nested objects can also be merged by setting ```mergeDeep=true```
+Nested objects can also be merged by setting `mergeDeep=true`
 
 ```js
-const arr1 = [{
+const arr1 = [
+  {
     name: 'john',
     age: 18,
     address: {
-        line1: 'Stone Road',
-        city: 'London',
-        country: 'UK'
-    }
-}, {
+      line1: 'Stone Road',
+      city: 'London',
+      country: 'UK',
+    },
+  },
+  {
     name: 'sam',
-    age: 24
-}];
+    age: 24,
+  },
+];
 
-const arr2 = [{
+const arr2 = [
+  {
     name: 'john',
     age: 18,
     address: {
-        line2: 'Camden'
-    }
-}, {
+      line2: 'Camden',
+    },
+  },
+  {
     name: 'sam',
-    age: 24
-}];
+    age: 24,
+  },
+];
 
-const result = mergeBy(arr1, arr2, 'name', true)
+const result = mergeby(arr1, arr2, 'name', true);
 
 /* Result
 [{
@@ -125,7 +130,6 @@ const result = mergeBy(arr1, arr2, 'name', true)
     age: 24
 }]
 */
-
 ```
 
 A comparator function can be passed instead
@@ -155,9 +159,9 @@ const arr2 = [{
     age: 24
 }];
 
-const result = mergeBy(arr1, arr2, (item1, item2) => {
+const result = mergeby(arr1, arr2, (item1, item2) => {
     return item1.name === item2.name
-}))
+}), true)
 
 /* Result
 [{
